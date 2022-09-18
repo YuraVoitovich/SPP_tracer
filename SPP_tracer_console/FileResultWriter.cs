@@ -20,10 +20,9 @@ namespace SPP_tracer_console
         public void WriteResult(string result)
         {
             
-            using (FileStream fs = File.OpenWrite(path))
+            using (StreamWriter sw = new StreamWriter(path))
             {
-                byte[] info = new UTF8Encoding(true).GetBytes(result);
-                fs.Write(info, 0, info.Length);
+                sw.Write(result);
             }
           
         }
