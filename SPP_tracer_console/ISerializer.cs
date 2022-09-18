@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SPP_tracer_console
 {
-    internal interface ISerialization
+    internal interface ISerializer
     {
         String Serialize(List<TraceResult> traceResults);
     }

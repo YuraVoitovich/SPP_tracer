@@ -5,7 +5,7 @@ using System.IO;
 
 namespace SPP_tracer_console
 {
-    internal class JSONSerialization : ISerialization
+    internal class JSONSerializer : ISerializer
     {
         public string Serialize(List<TraceResult> traceResults)
         {
