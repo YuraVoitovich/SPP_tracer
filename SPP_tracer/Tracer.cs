@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SPP_tracer.exception;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -22,6 +23,10 @@ namespace SPP_tracer
 
         public TraceResult GetTraceResult()
         {
+            if (stack.Count != 0)
+            {
+                throw new TracerException("Method \"StopTrace\" not called for all \"StartTrace\" mehtods");
+            }
             return traceResult;
         }
 
@@ -47,6 +52,10 @@ namespace SPP_tracer
 
         public void StopTrace()
         {
+            if (stack.Count == 0)
+            {
+                throw new TracerException("The method \"StopTrace\" cannot be called before the method \"StartTrace\" is called"); 
+            }
             stack.Peek().StopTrace();
             traceResult.ThreadTime += stack.Peek().Time;
             stack.Pop();
