@@ -10,7 +10,7 @@ using System.Xml.Serialization;
 
 namespace SPP_tracer_console
 {
-    internal class XMLSerialization : ISerialization
+    internal class XMLSerializer : ISerializer
     {
         public string Serialize(List<TraceResult> traceResults)
         {
