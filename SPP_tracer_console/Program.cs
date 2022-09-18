@@ -27,9 +27,7 @@ namespace SPP_tracer_console
             A.start();
         }
         static void Main(string[] args)
-        {
-
-            
+        {   
             List<Thread> threads = new List<Thread>();
             for (int i = 0; i < 10; i++)
             {
@@ -41,9 +39,9 @@ namespace SPP_tracer_console
             {
                 thread.Join();
             }
-            ISerialization serialization = new XMLSerialization();
+            ISerializer serialization = new XMLSerializer();
             IResultWriter resultWriter = new ConsoleResultWriter();
-            IResultWriter resultFileWriter = new FileResultWriter("lol.txt");
+            IResultWriter resultFileWriter = new FileResultWriter("D:\\lol.txt");
             string result = serialization.Serialize(traceResults);
             resultWriter.WriteResult(result);
             resultFileWriter.WriteResult(result);

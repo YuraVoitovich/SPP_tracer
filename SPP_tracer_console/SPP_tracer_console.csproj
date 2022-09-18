@@ -51,17 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ConsoleResultWriter.cs" />
     <Compile Include="FileResultWriter.cs" />
     <Compile Include="IResultWriter.cs" />
-    <Compile Include="ISerialization.cs" />
-    <Compile Include="JSONSerialization.cs" />
+    <Compile Include="ISerializer.cs" />
+    <Compile Include="JSONSerializer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestClassA.cs" />
     <Compile Include="TestClassB.cs" />
-    <Compile Include="XMLSerialization.cs" />
+    <Compile Include="XMLSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
