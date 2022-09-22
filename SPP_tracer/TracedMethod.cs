@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -10,13 +11,17 @@ namespace SPP_tracer
     public class TracedMethod
     {
         private Stopwatch stopwatch = new Stopwatch();
-        public String MethodName { set; get; }
+        public String MethodName { internal set; get; }
 
-        public String ClassName { set; get; }
+        public String ClassName { internal set; get; }
 
-        public long Time { set; get; }
+        public long Time { internal set; get; }
 
-        public List<TracedMethod> TracedMethods { get; set; }
+        public IList<TracedMethod> TracedMethods
+        {
+            get { return TracedMethods.ToImmutableList(); }
+            internal set { TracedMethods = value; }
+        }
        
 
         internal void AddTracedMethod(TracedMethod tracedMethod)
